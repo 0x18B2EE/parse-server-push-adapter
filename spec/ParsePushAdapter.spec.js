@@ -54,7 +54,7 @@ describe('ParsePushAdapter', () => {
   it('can get valid push types', (done) => {
     var parsePushAdapter = new ParsePushAdapter();
 
-    expect(parsePushAdapter.getValidPushTypes()).toEqual(['ios', 'android']);
+    expect(parsePushAdapter.getValidPushTypes()).toEqual(['ios', 'android', 'sns']);
     done();
   });
 

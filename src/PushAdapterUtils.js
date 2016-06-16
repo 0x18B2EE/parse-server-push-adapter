@@ -18,10 +18,13 @@ export function classifyInstallations(installations, validPushTypes) {
       continue;
     }
     let pushType = installation.deviceType;
+    if (installation.pushType && installation.pushType != 'gcm') {
+      pushType = installation.pushType;
+    }
     if (deviceMap[pushType]) {
       deviceMap[pushType].push({
         deviceToken: installation.deviceToken,
-        appIdentifier: installation.appIdentifier
+        appIdentifier: installation.appIdentifier,
       });
     }
   }
