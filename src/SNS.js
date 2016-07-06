@@ -83,7 +83,7 @@ function publishToSNS(sns, device, payload, messageAttributes) {
     };
 
     if (err != null) {
-      log.error(LOG_PREFIX, "Error sending push: ", arn);
+      log.error(LOG_PREFIX, "Error sending push: ", device.deviceToken);
       log.verbose(LOG_PREFIX, "Error details: ", err);
       response.transmitted = false;
       if (err.stack) {
